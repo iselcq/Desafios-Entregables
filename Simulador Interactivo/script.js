@@ -1,4 +1,3 @@
-
 let opcion = parseInt(prompt("Elige una opción: \n1.- Quiero saber a que hora debo dormirme  \n2.- Quiero saber a que hora debo despertar \n X.-Salir"));
 
 function calcularHoraDormir(horaDespertar, numeroCiclos) {
@@ -30,9 +29,14 @@ while (opcion != 'X') {
             c = calcularHoraDespertar(horaDormir, 4)
             alert('Para completar 6 ciclos de sueño, duerme a las ' + a + '\nPara completar 5 ciclos de sueño, duerme a las ' + b + '\nPara completar 4 ciclos de sueño, duerme a las ' + c);
         default:
+            alert('Elegiste una opcion invalida');
             break;
     }
     opcion = parseInt(prompt("Elige una opción: \n1.- Quiero saber a que hora debo dormirme  \n2.- Quiero saber a que hora debo despertar \n X.-Salir"));
 
 
 }
+
+
+
+console.log(d.toString());
