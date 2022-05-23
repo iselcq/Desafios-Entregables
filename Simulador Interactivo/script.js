@@ -1,4 +1,4 @@
-let opcion = parseInt(prompt("Elige una opción: \n1.- Quiero saber a que hora debo dormirme  \n2.- Quiero saber a que hora debo despertar \n X.-Salir"));
+let opcion = parseInt(prompt("Elige una opción: \n1.- Quiero saber a que hora debo dormirme  \n2.- Quiero saber a que hora debo despertar \n 3.-Salir"));
 
 function calcularHoraDormir(horaDespertar, numeroCiclos) {
     const horaDormir = (horaDespertar - (numeroCiclos * 90));
@@ -10,7 +10,7 @@ function calcularHoraDespertar(horaDormir, numeroCiclos) {
     return horaDespertar
 }
 
-while (opcion != 'X') {
+while (opcion < 3) {
 
     let a, b, c
 
@@ -32,11 +32,9 @@ while (opcion != 'X') {
             alert('Elegiste una opcion invalida');
             break;
     }
-    opcion = parseInt(prompt("Elige una opción: \n1.- Quiero saber a que hora debo dormirme  \n2.- Quiero saber a que hora debo despertar \n X.-Salir"));
+    opcion = parseInt(prompt("Elige una opción: \n1.- Quiero saber a que hora debo dormirme  \n2.- Quiero saber a que hora debo despertar \n 3.-Salir"));
 
 
 }
-
-
 
 console.log(d.toString());
