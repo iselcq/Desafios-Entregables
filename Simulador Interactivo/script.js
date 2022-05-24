@@ -2,9 +2,9 @@ let opcion = parseInt(prompt("Elige una opción: \n1.- Quiero saber a que hora d
 
 function calcularHoraDormir(horaDespertar, numeroCiclos) {
     const horaActual = new Date() // Obtener la hora Actual
-    const horaA = horaDespertar.split(':') // Separando el string por el caracter ':'
-    horaActual.setHours(horaA[0]) //Asignar el elemnto 0 del string a hora Actual
-    horaActual.setMinutes(horaA[1]) //Asignar el elemento 1 del string a minutos Actual
+    const horaA = horaDespertar.split(':') // Crear el arreglo separando el string por el caracter ':'
+    horaActual.setHours(horaA[0]) //Asignar el elemento 0 del string al arreglo horaActual
+    horaActual.setMinutes(horaA[1]) //Asignar el elemento 1 del string a minutos del arreglo horaActual
     const horaDormirMS = horaActual.getTime() - (90 * 60 * 1000 * numeroCiclos) // Obtengo la hora con los elementos de entrada del usuario en milisegundos y hago la operacion para restar los milisegundos de 90 minutos por cada ciclo de sueño
     const horaDormir = new Date(horaDormirMS) // Convierto el resultado anterior a un objeto Date
     const horaDormirHora = horaDormir.getHours() //Obtengo las horas del objeto Date
