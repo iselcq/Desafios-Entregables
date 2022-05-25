@@ -35,24 +35,31 @@ function calcularHoraDespertar(horaDormir, numeroCiclos) {
     return horaDespertarNueva
 }
 
+const numeroCiclos = [6, 5, 4]
+
 while (opcion < 3) {
 
-    let a, b, c
+    let horas = []
 
     switch (opcion) {
         case 1:
             let horaDespertar = prompt('Ingresa la hora a la que quieres despertar, formato 24 horas HH:MM.');
-            a = calcularHoraDormir(horaDespertar, 6)
-            b = calcularHoraDormir(horaDespertar, 5)
-            c = calcularHoraDormir(horaDespertar, 4)
-            alert('Para completar 6 ciclos de sueño, duerme a las ' + a + '\nPara completar 5 ciclos de sueño, duerme a las ' + b + '\nPara completar 4 ciclos de sueño, duerme a las ' + c);
+            for (const dormir of numeroCiclos) {
+                horas.push(calcularHoraDormir(horaDespertar, dormir))
+            }
+
+            alert('Para completar ' + numeroCiclos[0] + ' ciclos de sueño, duerme a las ' + horas[0] + '\nPara completar ' + numeroCiclos[1] + ' ciclos de sueño, duerme a las ' + horas[1] + '\nPara completar ' + numeroCiclos[2] + ' ciclos de sueño, duerme a las ' + horas[2]);
             break;
+
         case 2:
             let horaDormir = prompt('Ingresa la hora a la que quieres ir a dormir, formato 24 horas HH:MM.');
-            a = calcularHoraDespertar(horaDormir, 6)
-            b = calcularHoraDespertar(horaDormir, 5)
-            c = calcularHoraDespertar(horaDormir, 4)
-            alert('Para completar 6 ciclos de sueño, despierta a las ' + a + '\nPara completar 5 ciclos de sueño, despierta a las ' + b + '\nPara completar 4 ciclos de sueño, despierta a las ' + c);
+            for (const despertar of numeroCiclos) {
+                horas.push(calcularHoraDespertar(horaDormir, despertar))
+            }
+
+            alert('Para completar ' + numeroCiclos[0] + ' ciclos de sueño, despierta a las ' + horas[0] + '\nPara completar ' + numeroCiclos[1] + ' ciclos de sueño, despierta a las ' + horas[1] + '\nPara completar ' + numeroCiclos[2] + ' ciclos de sueño, despierta a las ' + horas[2]);
+            break;
+
         default:
             alert('Elegiste una opcion invalida');
             break;
