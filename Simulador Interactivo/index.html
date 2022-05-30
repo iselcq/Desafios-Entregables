@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Calculadora de Ciclos de Sueño</title>
-<!--    <link rel="stylesheet" href="style.css"> -->
-  </head>
-  <body>
-<h1>Calculadora de Ciclos de Sueño</h1>
-<h4>Evita dormir mal o no lo suficiente</h4>
 
-<p>Cuando duermes, tu cuerpo y tu cerebro pasan por varios ciclos del sueño. Cada ciclo consta de cuatro etapas distintas:.</p>
-<ul>
-  <li><b>Etapa 1 NREM:</b> La primera etapa del sueño, el período entre la vigilia y el sueño.</li>
-  <li><b>Etapa 2 NREM:</b> Inicio del sueño. Ya no eres consciente de tu entorno, tu temperatura corporal desciende ligeramente, tu respiración y tu ritmo cardíaco se vuelven regulares.</li>
-  <li><b>Etapa 3 NREM:</b> La etapa más profunda y reparadora del sueño. La respiración se ralentiza, la presión sanguínea desciende, los músculos se relajan, se liberan las hormonas. Aquí tiene lugar el proceso de recuperacion fisica y psiquica del organismo al mismo tiempo que el cuerpo gana energía.</li>
-  <li><b>Sueño REM:</b> La última etapa del ciclo de sueño. El cerebro está más activo y se producen los sueños. Tus ojos se mueven rápidamente bajo los párpados. El sueño REM aumenta el rendimiento cognitivo y físico al despertar.</li>
-</ul>
-<p>Cada ciclo dura aproximadamente 90 minutos. Una buena noche de descanso consiste en completar 5 ó 6 ciclos de sueño.</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculadora de Ciclos de Sueño</title>
+  <!--    <link rel="stylesheet" href="style.css"> -->
+</head>
 
-<p>Lo ideal es despertar en la etapa final del REM o al inicio de la Etapa 1, de esta manera se evitara la sensación de somnolencia y disminución motora al despertar.</p>
+<body>
+  <h1>Calculadora de Ciclos de Sueño</h1>
+  <h4>Evita dormir mal o no lo suficiente</h4>
 
-<form>
-  <label for="dormir">Elige una opción</label>
-  <select name="dormir" id="dormir">
-    <option value="horaDormir">Me quiero despertar a las: </option>
-    <option value="horaDespertar">Me quiero dormir a las: </option>
-  </select>
-  <br>
-  <label for="despertar">Selecciona una hora</label>
-  <select name="despertar" id="despertar">
-    <option value="5:00">5:00 AM</option>
-    <option value="6:00">6:00 AM</option>
-    <option value="7:00">7:00 AM</option>
-    <option value="8:00">8:00 AM</option>
-    <option value="9:00">9:00 AM</option>
-    <option value="horaDespertar">Me quiero dormir a las:</option>
-  </select>
-  <br>
-  <input type="submit" value="CALCULAR">
-</form>
+  <p>Cuando duermes, tu cuerpo y tu cerebro pasan por varios ciclos del sueño. Cada ciclo consta de cuatro etapas
+    distintas:.</p>
+  <ul>
+    <li><b>Etapa 1 NREM:</b> La primera etapa del sueño, el período entre la vigilia y el sueño.</li>
+    <li><b>Etapa 2 NREM:</b> Inicio del sueño. Ya no eres consciente de tu entorno, tu temperatura corporal desciende
+      ligeramente, tu respiración y tu ritmo cardíaco se vuelven regulares.</li>
+    <li><b>Etapa 3 NREM:</b> La etapa más profunda y reparadora del sueño. La respiración se ralentiza, la presión
+      sanguínea desciende, los músculos se relajan, se liberan las hormonas. Aquí tiene lugar el proceso de recuperacion
+      fisica y psiquica del organismo al mismo tiempo que el cuerpo gana energía.</li>
+    <li><b>Sueño REM:</b> La última etapa del ciclo de sueño. El cerebro está más activo y se producen los sueños. Tus
+      ojos se mueven rápidamente bajo los párpados. El sueño REM aumenta el rendimiento cognitivo y físico al despertar.
+    </li>
+  </ul>
+  <p>Cada ciclo dura aproximadamente 90 minutos. Una buena noche de descanso consiste en completar 5 ó 6 ciclos de
+    sueño.</p>
 
-<script src="script.js"></script>
-  </body>
+  <p>Lo ideal es despertar en la etapa final del REM o al inicio de la Etapa 1, de esta manera se evitara la sensación
+    de somnolencia y disminución motora al despertar.</p>
+
+  <form>
+    <label for="dormir">Elige una opción</label>
+    <select name="dormir" id="dormir">
+      <option value="horaDormir">Me quiero despertar a las: </option>
+      <option value="horaDespertar">Me quiero dormir a las: </option>
+    </select>
+    <br>
+    <label for="despertar">Selecciona una hora</label>
+    <select name="despertar" id="despertar">
+      <option value="horaDespertar">Me quiero dormir a las:</option>
+    </select>
+    <br>
+    <input type="submit" value="CALCULAR">
+  </form>
+
+  <script src="script.js"></script>
+</body>
+
 </html>

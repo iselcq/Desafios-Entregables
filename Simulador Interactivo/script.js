@@ -68,3 +68,17 @@ while (opcion < 3) {
 
 
 }
+
+
+//// DOM
+
+
+const nuevasHoras = [{ value: "5:00", text: "5:00 AM" }, { value: "5:30", text: "5:30 AM" }, { value: "6:00", text: "6:00 AM" }, { value: "6:30", text: "6:30 AM" }, { value: "7:00", text: "7:00 AM" }, { value: "7:30", text: "7:30 AM" }, { value: "8:00", text: "8:00 AM" }, { value: "8:30", text: "8:30 AM" }]
+const listaHoras = document.querySelector('#despertar')
+
+for (const nuevaHora of nuevasHoras) {
+    let option = document.createElement('option');
+    option.innerText = nuevaHora.text;
+    option.value = nuevaHora.value;
+    listaHoras.appendChild(option);
+}
