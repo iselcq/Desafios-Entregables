@@ -82,3 +82,5 @@ for (const nuevaHora of nuevasHoras) {
     option.value = nuevaHora.value;
     listaHoras.appendChild(option);
 }
+
+let 
