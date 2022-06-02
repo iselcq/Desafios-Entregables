@@ -83,4 +83,8 @@ for (const nuevaHora of nuevasHoras) {
     listaHoras.appendChild(option);
 }
 
-let 
+let accion = document.getElementById("botonAccion")
+accion.addEventListener("click", mostrarOpcion)
+function mostrarOpcion() {
+    console.log("Boton Calcular")
+} 
