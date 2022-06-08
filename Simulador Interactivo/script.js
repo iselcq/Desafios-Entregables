@@ -1,39 +1,50 @@
 let opcionSelect = document.getElementById("opcion"); /* =  parseInt(prompt("Elige una opción: \n1.- Quiero saber a que hora debo dormirme  \n2.- Quiero saber a que hora debo despertar \n 3.-Salir")); */
 let opcion = opcionSelect.value;
+let opcionEnLS = localStorage.getItem("opcion");
+if (opcionEnLS) {
+    opcion = opcionEnLS
+    opcionSelect.value = opcionEnLS
+}
+
 opcionSelect.addEventListener("change", (evento) => {
     opcion = evento.target.value
+    localStorage.setItem('opcion', opcion)
 })
+
+let resultado = document.getElementById("resultado")
 
 
 let horaSelect = document.getElementById("hora");
 
-//// DOM
 
 
-const nuevasHoras = [{ value: "00:00", text: "00:00 AM" }, { value: "00:30", text: "00:30 AM" },
-{ value: "01:00", text: "01:00 AM" }, { value: "01:30", text: "01:30 AM" },
-{ value: "02:00", text: "02:00 AM" }, { value: "02:30", text: "02:30 AM" },
-{ value: "03:00", text: "03:00 AM" }, { value: "03:30", text: "03:30 AM" },
-{ value: "04:00", text: "04:00 AM" }, { value: "04:30", text: "04:30 AM" },
-{ value: "05:00", text: "05:00 AM" }, { value: "05:30", text: "05:30 AM" },
-{ value: "06:00", text: "06:00 AM" }, { value: "06:30", text: "06:30 AM" },
-{ value: "07:00", text: "07:00 AM" }, { value: "07:30", text: "07:30 AM" },
-{ value: "08:00", text: "08:00 AM" }, { value: "08:30", text: "08:30 AM" },
-{ value: "09:00", text: "09:00 AM" }, { value: "09:30", text: "09:30 AM" },
-{ value: "10:00", text: "10:00 AM" }, { value: "10:30", text: "10:30 AM" },
-{ value: "11:00", text: "11:00 AM" }, { value: "11:30", text: "11:30 AM" },
-{ value: "12:00", text: "12:00 AM" }, { value: "12:30", text: "12:30 AM" },
-{ value: "13:00", text: "13:00 AM" }, { value: "13:30", text: "13:30 AM" },
-{ value: "14:00", text: "14:00 AM" }, { value: "14:30", text: "14:30 AM" },
-{ value: "15:00", text: "15:00 AM" }, { value: "15:30", text: "15:30 AM" },
-{ value: "16:00", text: "16:00 AM" }, { value: "16:30", text: "16:30 AM" },
-{ value: "17:00", text: "17:00 AM" }, { value: "17:30", text: "17:30 AM" },
-{ value: "18:00", text: "18:00 AM" }, { value: "18:30", text: "18:30 AM" },
-{ value: "19:00", text: "19:00 AM" }, { value: "19:30", text: "19:30 AM" },
-{ value: "20:00", text: "20:00 AM" }, { value: "20:30", text: "20:30 AM" },
-{ value: "21:00", text: "21:00 AM" }, { value: "21:30", text: "21:30 AM" },
-{ value: "22:00", text: "22:00 AM" }, { value: "22:30", text: "22:30 AM" },
-{ value: "23:00", text: "23:00 AM" }, { value: "23:30", text: "23:30 AM" },]
+const nuevasHorasJSON = `[{ "value": "00:00", "text": "00:00 AM" }, { "value": "00:30", "text": "00:30 AM" },
+{ "value": "01:00", "text": "01:00 AM" }, { "value": "01:30", "text": "01:30 AM" },
+{ "value": "02:00", "text": "02:00 AM" }, { "value": "02:30", "text": "02:30 AM" },
+{ "value": "03:00", "text": "03:00 AM" }, { "value": "03:30", "text": "03:30 AM" },
+{ "value": "04:00", "text": "04:00 AM" }, { "value": "04:30", "text": "04:30 AM" },
+{ "value": "05:00", "text": "05:00 AM" }, { "value": "05:30", "text": "05:30 AM" },
+{ "value": "06:00", "text": "06:00 AM" }, { "value": "06:30", "text": "06:30 AM" },
+{ "value": "07:00", "text": "07:00 AM" }, { "value": "07:30", "text": "07:30 AM" },
+{ "value": "08:00", "text": "08:00 AM" }, { "value": "08:30", "text": "08:30 AM" },
+{ "value": "09:00", "text": "09:00 AM" }, { "value": "09:30", "text": "09:30 AM" },
+{ "value": "10:00", "text": "10:00 AM" }, { "value": "10:30", "text": "10:30 AM" },
+{ "value": "11:00", "text": "11:00 AM" }, { "value": "11:30", "text": "11:30 AM" },
+{ "value": "12:00", "text": "12:00 AM" }, { "value": "12:30", "text": "12:30 AM" },
+{ "value": "13:00", "text": "13:00 AM" }, { "value": "13:30", "text": "13:30 AM" },
+{ "value": "14:00", "text": "14:00 AM" }, { "value": "14:30", "text": "14:30 AM" },
+{ "value": "15:00", "text": "15:00 AM" }, { "value": "15:30", "text": "15:30 AM" },
+{ "value": "16:00", "text": "16:00 AM" }, { "value": "16:30", "text": "16:30 AM" },
+{ "value": "17:00", "text": "17:00 AM" }, { "value": "17:30", "text": "17:30 AM" },
+{ "value": "18:00", "text": "18:00 AM" }, { "value": "18:30", "text": "18:30 AM" },
+{ "value": "19:00", "text": "19:00 AM" }, { "value": "19:30", "text": "19:30 AM" },
+{ "value": "20:00", "text": "20:00 AM" }, { "value": "20:30", "text": "20:30 AM" },
+{ "value": "21:00", "text": "21:00 AM" }, { "value": "21:30", "text": "21:30 AM" },
+{ "value": "22:00", "text": "22:00 AM" }, { "value": "22:30", "text": "22:30 AM" },
+{ "value": "23:00", "text": "23:00 AM" }, { "value": "23:30", "text": "23:30 AM" }]`
+
+const nuevasHoras = JSON.parse(nuevasHorasJSON);
+
 /* const listaHoras = document.querySelector('#despertar') */
 
 for (const nuevaHora of nuevasHoras) {
@@ -44,8 +55,14 @@ for (const nuevaHora of nuevasHoras) {
 }
 
 let hora = horaSelect.value;
+let horaEnLS = localStorage.getItem('hora')
+if (horaEnLS) {
+    hora = horaEnLS
+    horaSelect.value = horaEnLS
+}
 horaSelect.addEventListener("change", (evento) => {
     hora = evento.target.value
+    localStorage.setItem("hora", hora)
 })
 
 
@@ -97,8 +114,7 @@ function calcular(opcion) {
             for (const dormir of numeroCiclos) {
                 horas.push(calcularHoraDormir(horaDespertar, dormir))
             }
-
-            alert('Para completar ' + numeroCiclos[0] + ' ciclos de sueño, duerme a las ' + horas[0] + '\nPara completar ' + numeroCiclos[1] + ' ciclos de sueño, duerme a las ' + horas[1] + '\nPara completar ' + numeroCiclos[2] + ' ciclos de sueño, duerme a las ' + horas[2]);
+            resultado.innerText = 'Para completar ' + numeroCiclos[0] + ' ciclos de sueño, duerme a las ' + horas[0] + '\nPara completar ' + numeroCiclos[1] + ' ciclos de sueño, duerme a las ' + horas[1] + '\nPara completar ' + numeroCiclos[2] + ' ciclos de sueño, duerme a las ' + horas[2];
             break;
 
         case "2":
@@ -107,7 +123,7 @@ function calcular(opcion) {
                 horas.push(calcularHoraDespertar(horaDormir, despertar))
             }
 
-            alert('Para completar ' + numeroCiclos[0] + ' ciclos de sueño, despierta a las ' + horas[0] + '\nPara completar ' + numeroCiclos[1] + ' ciclos de sueño, despierta a las ' + horas[1] + '\nPara completar ' + numeroCiclos[2] + ' ciclos de sueño, despierta a las ' + horas[2]);
+            resultado.innerText = 'Para completar ' + numeroCiclos[0] + ' ciclos de sueño, despierta a las ' + horas[0] + '\nPara completar ' + numeroCiclos[1] + ' ciclos de sueño, despierta a las ' + horas[1] + '\nPara completar ' + numeroCiclos[2] + ' ciclos de sueño, despierta a las ' + horas[2];
             break;
 
         default:
@@ -120,7 +136,10 @@ function calcular(opcion) {
 }
 
 let accion = document.getElementById("botonAccion")
+
 accion.addEventListener("click", mostrarOpcion)
-function mostrarOpcion() {
+
+function mostrarOpcion(evento) {
+    evento.preventDefault()
     calcular(opcion)
 } 
