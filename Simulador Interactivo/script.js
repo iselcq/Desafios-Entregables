@@ -1,5 +1,7 @@
 async function main() {
 
+
+
     let opcionSelect = document.getElementById("opcion"); /* =  parseInt(prompt("Elige una opción: \n1.- Quiero saber a que hora debo dormirme  \n2.- Quiero saber a que hora debo despertar \n 3.-Salir")); */
     let opcion = opcionSelect.value;
     let opcionEnLS = localStorage.getItem("opcion");
@@ -94,10 +96,17 @@ async function main() {
                 for (const dormir of numeroCiclos) {
                     horas.push(calcularHoraDormir(horaDespertar, dormir))
                 }
-
-                resultado.innerText = `Para completar ${numeroCiclos[0]} ciclos de sueño, duerme a las  ${horas[0]}
+                const textoResultado = `Para completar ${numeroCiclos[0]} ciclos de sueño, duerme a las  ${horas[0]}
             Para completar ${numeroCiclos[1]} ciclos de sueño, duerme a las ${horas[1]}
             Para completar ${numeroCiclos[2]} ciclos de sueño, duerme a las ${horas[2]}`
+
+                swal({
+                    title: "Resultados",
+                    text: textoResultado,
+                    icon: "success",
+                    button: "Cerrar",
+                });
+
                 break;
 
             case "2":
@@ -106,9 +115,17 @@ async function main() {
                     horas.push(calcularHoraDespertar(horaDormir, despertar))
                 }
 
-                resultado.innerText = `Para completar ${numeroCiclos[0]} ciclos de sueño, despierta a las ${horas[0]}
+                const textoResultado2 = `Para completar ${numeroCiclos[0]} ciclos de sueño, despierta a las ${horas[0]}
             Para completar ${numeroCiclos[1]} ciclos de sueño, despierta a las ${horas[1]}
             Para completar ${numeroCiclos[2]} ciclos de sueño, despierta a las ${horas[2]}`
+
+                swal({
+                    title: "Resultados",
+                    text: textoResultado2,
+                    icon: "success",
+                    button: "Cerrar",
+                });
+
                 break;
 
             default:
