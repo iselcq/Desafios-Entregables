@@ -6,53 +6,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Calculadora de Ciclos de Sueño</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <!--    <link rel="stylesheet" href="style.css"> -->
 </head>
 
-<body>
-  <h1>Calculadora de Ciclos de Sueño</h1>
-  <h4>Evita dormir mal o no lo suficiente</h4>
+<body class="h-screen w-full bg-violet-300">
 
-  <p>Cuando duermes, tu cuerpo y tu cerebro pasan por varios ciclos del sueño. Cada ciclo consta de cuatro etapas
-    distintas:.</p>
-  <ul>
-    <li><b>Etapa 1 NREM:</b> La primera etapa del sueño, el período entre la vigilia y el sueño.</li>
-    <li><b>Etapa 2 NREM:</b> Inicio del sueño. Ya no eres consciente de tu entorno, tu temperatura corporal desciende
-      ligeramente, tu respiración y tu ritmo cardíaco se vuelven regulares.</li>
-    <li><b>Etapa 3 NREM:</b> La etapa más profunda y reparadora del sueño. La respiración se ralentiza, la presión
-      sanguínea desciende, los músculos se relajan, se liberan las hormonas. Aquí tiene lugar el proceso de recuperacion
-      fisica y psiquica del organismo al mismo tiempo que el cuerpo gana energía.</li>
-    <li><b>Sueño REM:</b> La última etapa del ciclo de sueño. El cerebro está más activo y se producen los sueños. Tus
-      ojos se mueven rápidamente bajo los párpados. El sueño REM aumenta el rendimiento cognitivo y físico al despertar.
-    </li>
-  </ul>
-  <p>Cada ciclo dura aproximadamente 90 minutos. Una buena noche de descanso consiste en completar 5 ó 6 ciclos de
-    sueño.</p>
+  <h1
+    class="font-extrabold text-5xl text-center mt-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-purple-900">
+    Calculadora de Ciclos de Sueño</h1>
+  <h4 class="text-2xl text-center mt-2 mb-2">Evita dormir mal o no lo suficiente</h4>
+  <main class="flex">
+    <section class="mx-4 my-6 bg-green-200 border border-green-700 px-8 py-6 rounded-xl shadow-xl shadow-violet-500/60">
+      <p class="mb-4">Cuando duermes, tu cuerpo y tu cerebro pasan por varios ciclos del sueño. Cada ciclo consta de
+        cuatro etapas
+        distintas:.</p>
+      <ul>
+        <li class="mb-2"><b>Etapa 1 NREM:</b> La primera etapa del sueño, el período entre la vigilia y el sueño.</li>
+        <li class="mb-2"><b>Etapa 2 NREM:</b> Inicio del sueño. Ya no eres consciente de tu entorno, tu temperatura
+          corporal
+          desciende
+          ligeramente, tu respiración y tu ritmo cardíaco se vuelven regulares.</li>
+        <li class="mb-2"><b>Etapa 3 NREM:</b> La etapa más profunda y reparadora del sueño. La respiración se ralentiza,
+          la presión
+          sanguínea desciende, los músculos se relajan, se liberan las hormonas. Aquí tiene lugar el proceso de
+          recuperacion
+          fisica y psiquica del organismo al mismo tiempo que el cuerpo gana energía.</li>
+        <li class="mb-2"><b>Sueño REM:</b> La última etapa del ciclo de sueño. El cerebro está más activo y se producen
+          los sueños.
+          Tus
+          ojos se mueven rápidamente bajo los párpados. El sueño REM aumenta el rendimiento cognitivo y físico al
+          despertar.
+        </li>
+      </ul>
+    </section>
+    <section
+      class="mx-4 my-8 bg-purple-100 border border-purple-400 px-8 py-6 rounded-xl shadow-xl shadow-violet-500/60">
+      <p>Cada ciclo dura aproximadamente 90 minutos. Una buena noche de descanso consiste en completar 5 ó 6 ciclos de
+        sueño.</p>
 
-  <p>Lo ideal es despertar en la etapa final del REM o al inicio de la Etapa 1, de esta manera se evitara la sensación
-    de somnolencia y disminución motora al despertar.</p>
+      <p>Lo ideal es despertar en la etapa final del REM o al inicio de la Etapa 1, de esta manera se evitara la
+        sensación
+        de somnolencia y disminución motora al despertar.</p>
+      <br>
+      <form>
+        <label for="opcion">Elige una opción</label>
+        <select name="opcion" id="opcion"
+          class="px-2 py-1 border border-violet-200 border-2 cursor-pointer  bg-purple-50 ">
+          <option value=1>Me quiero despertar a las: </option>
+          <option value=2>Me quiero dormir a las: </option>
+        </select>
+        <br>
+        <br>
+        <label for="hora">Selecciona una hora</label>
+        <select name="hora" id="hora" class="px-2 py-1 border border-violet-200 border-2 cursor-pointer  bg-purple-50">
+          <!--   <option value="horaDespertar">Me quiero dormir a las:</option> -->
+        </select>
+        <br>
+        <input
+          class="mt-6 px-4 py-2 rounded-full bg-violet-300 shadow-xl border border-4 border-violet-500 text-violet-900 cursor-pointer font-extrabold"
+          type="submit" id="botonAccion" value="CALCULAR">
+      </form>
 
+      <p id="resultado"></p>
 
-
-  <form>
-    <label for="opcion">Elige una opción</label>
-    <select name="opcion" id="opcion">
-      <option value=1>Me quiero despertar a las: </option>
-      <option value=2>Me quiero dormir a las: </option>
-    </select>
-    <br>
-    <label for="hora">Selecciona una hora</label>
-    <select name="hora" id="hora">
-      <!--   <option value="horaDespertar">Me quiero dormir a las:</option> -->
-    </select>
-    <br>
-    <input type="submit" id="botonAccion" value="CALCULAR">
-  </form>
-  <p id="resultado"></p>
+    </section>
+  </main>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="script.js"></script>
 </body>
-
 
 
 
